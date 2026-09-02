@@ -5,6 +5,8 @@
 - Change minimum Elixir version to 1.17 and minimum Erlang/OTP version to 27.
   Elixir 1.16 and below top out at OTP 26, and OTP 26 and below are end-of-life.
 - Prune the CI matrix to Elixir/OTP pairs that actually exist
+- Allow `httpoison` 3.x in addition to 2.x, so downstream apps can opt into
+  hackney 4 (which fixes several CVEs in hackney 1.x) without being forced onto it
 
 [2.2.2] - 2025-07-18
 
