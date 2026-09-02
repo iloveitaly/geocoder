@@ -46,7 +46,7 @@ defmodule Geocoder.Mixfile do
   defp deps do
     [
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
-      {:httpoison, "~> 2.1", optional: true},
+      {:httpoison, "~> 2.1 or ~> 3.0", optional: true},
       {:jason, "~> 1.2", optional: true},
       {:jsx, "~> 2.8 or ~> 3.0", optional: true},
       {:towel, "~> 0.2.2"},
