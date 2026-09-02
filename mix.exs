@@ -53,7 +53,7 @@ defmodule Geocoder.Mixfile do
       {:poolboy, "~> 1.5"},
       {:geohash, "~> 1.2"},
       {:ex_doc, ">= 0.0.0", only: :dev, runtime: false},
-      {:hammox, "~> 0.7", only: :test},
+      {:hammox, "~> 1.0", only: :test},
       {:excoveralls, "~> 0.14", only: :test}
     ]
   end
