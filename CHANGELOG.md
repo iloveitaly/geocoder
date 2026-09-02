@@ -1,5 +1,11 @@
 [Unreleased]
 
+### Changes
+
+- Change minimum Elixir version to 1.17 and minimum Erlang/OTP version to 27.
+  Elixir 1.16 and below top out at OTP 26, and OTP 26 and below are end-of-life.
+- Prune the CI matrix to Elixir/OTP pairs that actually exist
+
 [2.2.2] - 2025-07-18
 
 ### Changes

@@ -75,7 +75,7 @@ defmodule Geocoder.Providers.OpenCageDataTest do
         )
 
       assert is_list(coords)
-      assert Enum.count(coords) > 0
+      refute Enum.empty?(coords)
       assert_belgium(coords |> List.first())
     end
   end
@@ -143,7 +143,7 @@ defmodule Geocoder.Providers.OpenCageDataTest do
         )
 
       assert is_list(coords)
-      assert Enum.count(coords) > 0
+      refute Enum.empty?(coords)
       assert_belgium(coords |> List.first())
     end
   end
