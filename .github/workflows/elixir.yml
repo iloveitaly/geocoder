@@ -13,29 +13,26 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # https://repo.hex.pm/builds/elixir/builds.txt
-        elixir: [1.14, 1.15, 1.16, 1.17, 1.18, 1.19]
-        otp: [24.x, 25.x, 26.x, 27.x, 28.x]
-        exclude:
-          # Elixir 1.19 requires OTP 26+
-          - elixir: 1.19
-            otp: 24.x
-          - elixir: 1.19
-            otp: 25.x
-          # Elixir 1.18 requires OTP 25+
-          - elixir: 1.18
-            otp: 24.x
-          # Elixir 1.17 requires OTP 25+
-          - elixir: 1.17
-            otp: 24.x
-          # Elixir 1.16 requires OTP 24+
-          - elixir: 1.14
-            otp: 28.x
-          - elixir: 1.15
-            otp: 28.x
+        # Only pairs that actually exist. Elixir/OTP compatibility:
+        # https://hexdocs.pm/elixir/compatibility-and-deprecations.html
+        #   1.17 -> OTP 25-27   1.19 -> OTP 26-28
+        #   1.18 -> OTP 25-27   1.20 -> OTP 27-29
+        # Floors are Elixir 1.17 / OTP 27 (see mix.exs); OTP 26 and below are EOL.
         include:
-          - elixir: 1.16
-            otp: 26.x
+          - elixir: "1.17"
+            otp: "27.x"
+          - elixir: "1.18"
+            otp: "27.x"
+          - elixir: "1.19"
+            otp: "27.x"
+          - elixir: "1.19"
+            otp: "28.x"
+          - elixir: "1.20"
+            otp: "27.x"
+          - elixir: "1.20"
+            otp: "28.x"
+          - elixir: "1.20"
+            otp: "29.x"
             lint: lint
             coverage: coverage
     steps:
