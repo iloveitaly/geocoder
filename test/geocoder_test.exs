@@ -47,13 +47,13 @@ defmodule GeocoderTest do
   test "A list of results for an address in Belgium" do
     {:ok, coords} = Geocoder.call_list("Dikkelindestraat 46, 9032 Wondelgem, Belgium")
     assert is_list(coords)
-    assert Enum.count(coords) > 0
+    refute Enum.empty?(coords)
     assert_belgium(coords |> List.first())
   end
 
   test "A list of results for coordinates" do
     {:ok, coords} = Geocoder.call_list({51.0775264, 3.7073382})
     assert is_list(coords)
-    assert Enum.count(coords) > 0
+    refute Enum.empty?(coords)
   end
 end
